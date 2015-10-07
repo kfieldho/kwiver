@@ -13,13 +13,13 @@
 
 #include <sprokit/pipeline/process_exception.h>
 
-#include <maptk/modules.h>
-#include <maptk/core/algo/track_features.h>
-#include <maptk/core/algo/compute_ref_homography.h>
+//#include <maptk/modules.h>
+#include <maptk/algo/track_features.h>
+#include <maptk/algo/compute_ref_homography.h>
 
-#include <maptk/core/image_container.h>
-#include <maptk/core/track_set.h>
-#include <maptk/core/homography.h>
+#include <maptk/image_container.h>
+#include <maptk/track_set.h>
+#include <maptk/homography.h>
 
 #include <boost/make_shared.hpp>
 

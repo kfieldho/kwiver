@@ -8,10 +8,11 @@
 
 #include <types/kwiver.h>
 
-#include <maptk/modules.h>
-#include <maptk/core/image_container.h>
-#include <maptk/core/image.h>
-#include <maptk/core/homography.h>
+//#include <maptk/modules.h>
+#include <maptk/image_container.h>
+#include <maptk/image.h>
+#include <maptk/homography.h>
+#include <maptk/homography_f2f.h>
 
 #include <sprokit/pipeline/process_exception.h>
 
@@ -342,7 +343,7 @@ priv_t
     );
 
   // convert homography
-  maptk::homography const& matrix( s2r_homog );  // upcast to base matrix
+  Eigen::Matrix< double, 3, 3 > matrix= s2r_homog.homography()->matrix();                                                                               
   vnl_matrix_fixed< double, 3, 3 > homog;
 
   // Copy matrix into vnl format

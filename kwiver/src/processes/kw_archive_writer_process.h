@@ -11,7 +11,7 @@
 #include <processes/kwiver-config.h>
 
 #include <boost/scoped_ptr.hpp>
-#include <maptk/core/vector.h>
+#include <maptk/vector.h>
 
 namespace kwiver
 {

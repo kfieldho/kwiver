@@ -11,8 +11,9 @@
 #include <geo_lat_lon.h>
 #include <timestamp.h>
 
-#include <maptk/core/homography.h>
-#include <maptk/core/image_container.h>
+#include <maptk/homography.h>
+#include <maptk/homography_f2f.h>
+#include <maptk/image_container.h>
 
 #include <sprokit/pipeline_util/path.h>
 

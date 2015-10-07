@@ -9,7 +9,7 @@
 #define _KWIVER_CONFIG_UTIL_H_
 
 #include <sprokit/pipeline/config.h>
-#include <maptk/core/config_block.h>
+#include <maptk/config_block.h>
 
 
 namespace kwiver

@@ -11,11 +11,10 @@
 #include <core/timestamp.h>
 #include <core/config_util.h>
 
-#include <maptk/modules.h>
-#include <maptk/core/image_container.h>
-#include <maptk/core/image.h>
-#include <maptk/core/algo/image_io.h>
-#include <maptk/core/exceptions.h>
+#include <maptk/image_container.h>
+#include <maptk/image.h>
+#include <maptk/algo/image_io.h>
+#include <maptk/exceptions.h>
 
 #include <sprokit/pipeline/process_exception.h>
 #include <sprokit/pipeline/datum.h>
