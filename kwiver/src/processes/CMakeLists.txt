@@ -39,7 +39,7 @@ sprokit_add_plugin( kwiver_processes
 
 add_dependencies( kwiver_processes kwiver_core sprokit maptk VXL )
 
-set( maptk_libs maptk_core maptk_vxl )
+set( maptk_libs maptk maptk_core maptk_vxl maptk_apm )
 if (KWIVER_ENABLE_OPENCV)
   set (maptk_libs ${maptk_libs} maptk_ocv)
 endif()

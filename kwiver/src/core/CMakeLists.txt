@@ -31,6 +31,7 @@ add_dependencies( kwiver_core sprokit maptk VXL )
 
 target_link_libraries(kwiver_core
   ${Boost_LIBRARIES}
+  maptk
   maptk_core
   sprokit_pipeline
   )
