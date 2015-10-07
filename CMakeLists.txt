@@ -66,6 +66,9 @@ else()
   set(BOOST_ROOT_ARG ${Boost_LIBRARY_DIR}/..)
 endif()
 
+find_package(Eigen3 REQUIRED)
+include_directories(${EIGEN3_INCLUDE_DIR})
+
 # ================================================================
 # project global includes
 include_directories(BEFORE "${KWIVER_BUILD_INSTALL_PREFIX}/include")
@@ -152,6 +155,10 @@ set(KWIVER_ARGS_COMMON_BOOST
   -DBoost_USE_STATIC_LIBS=${Boost_USE_STATIC_LIBS}
 )
 
+set(KWIVER_ARGS_COMMON_EIGEN
+	  -DEIGEN3_ROOT:PATH=${EIGEN3_ROOT}
+	  )
+
 set( KWIVER_ARGS_OPENCV )
 
 if( KWIVER_ENABLE_OPENCV )
@@ -172,6 +179,7 @@ set(KWIVER_ARGS_COMMON ${KWIVER_ARGS_COMMON_CMAKE}
                        ${KWIVER_ARGS_COMMON_COMPILER}
                        ${KWIVER_ARGS_COMMON_LINKER}
                        ${KWIVER_ARGS_COMMON_BOOST}
+					   ${KWIVER_ARGS_COMMON_EIGEN}
   )
 
 # ================================================================
