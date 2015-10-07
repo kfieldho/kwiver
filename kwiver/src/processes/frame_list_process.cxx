@@ -15,6 +15,7 @@
 #include <maptk/image.h>
 #include <maptk/algo/image_io.h>
 #include <maptk/exceptions.h>
+#include <maptk/algorithm_plugin_manager.h>
 
 #include <sprokit/pipeline/process_exception.h>
 #include <sprokit/pipeline/datum.h>
@@ -76,7 +77,7 @@ frame_list_process
   : process( config ),
     d( new frame_list_process::priv )
 {
-  maptk::register_modules();
+  maptk::algorithm_plugin_manager::instance().register_plugins();
   make_ports();
   make_config();
 }
