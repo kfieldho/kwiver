@@ -52,7 +52,7 @@ elseif(WIN32)
     )
 endif()
 
-ExternalProject_Add(VXL
+ExternalProject_Add(VXL_proj
   PREFIX ${KWIVER_BUILD_PREFIX}
   SOURCE_DIR ${KWIVER_PACKAGES_DIR}/VXL
   CMAKE_GENERATOR ${gen}
@@ -81,7 +81,7 @@ ExternalProject_Add(VXL
   INSTALL_DIR ${KWIVER_BUILD_INSTALL_PREFIX}
   )
 
-ExternalProject_Add_Step(VXL forcebuild
+ExternalProject_Add_Step(VXL_proj forcebuild
   COMMAND ${CMAKE_COMMAND}
     -E remove ${KWIVER_BUILD_PREFIX}/src/VXL-stamp/VXL-build
   COMMENT "Removing build stamp file for build update (forcebuild)."
