@@ -21,6 +21,8 @@
 #include <maptk/track_set.h>
 #include <maptk/homography.h>
 
+#include <maptk/algorithm_plugin_manager.h>
+
 #include <boost/make_shared.hpp>
 
 // -- DEBUG
@@ -62,6 +64,7 @@ stabilize_image_process
   : process( config ),
     d( new stabilize_image_process::priv )
 {
+  maptk::algorithm_plugin_manager::instance().register_plugins();
   make_ports();
   make_config();
 }
@@ -86,6 +89,7 @@ void stabilize_image_process
   // Maybe should call check_nested_algo_configuration( "feature_tracker", algo_config );
   // Maybe should call check_nested_algo_configuration( "homography_generator", algo_config );
 
+  maptk::algo::track_features::check_nested_algo_configuration( "feature_tracker", algo_config);
   maptk::algo::track_features::set_nested_algo_configuration( "feature_tracker",
                                               algo_config, d->m_feature_tracker );
   if ( ! d->m_feature_tracker )
@@ -93,6 +97,7 @@ void stabilize_image_process
     throw sprokit::invalid_configuration_exception( name(), "Error configuring \"feature_tracker\"" );
   }
 
+  maptk::algo::track_features::check_nested_algo_configuration( "homography_generator", algo_config);
   maptk::algo::compute_ref_homography::set_nested_algo_configuration( "homography_generator",
                                                               algo_config, d->m_compute_homog );
   if ( ! d->m_compute_homog )
