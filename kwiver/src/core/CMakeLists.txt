@@ -27,7 +27,7 @@ set_target_properties( kwiver_core PROPERTIES
   LIBRARY_OUTPUT_DIRECTORY ${KWIVER_BUILD_INSTALL_PREFIX}/lib
 )
 
-add_dependencies( kwiver_core sprokit maptk VXL )
+add_dependencies( kwiver_core sprokit_proj maptk_proj VXL_proj )
 
 target_link_libraries(kwiver_core
   ${Boost_LIBRARIES}
